@@ -3,240 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pivotex</title>
+<title>Pivotex Investments Limited — Architecture, Engineering, Construction</title>
+<meta name="description" content="Pivotex is an architecture, engineering, and construction firm delivering design and program management for government and defense infrastructure across Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0E1A24;
-    --panel: #16232E;
-    --text: #EDEFF1;
-    --muted: #8B98A3;
-    --accent: #E8A33D;
-  }
-
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'IBM Plex Sans', sans-serif;
-  }
-
-  body {
-    background-image:
-      linear-gradient(rgba(139, 152, 163, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 152, 163, 0.06) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-
-  main {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4vw;
-    padding: 8vh 8vw;
-  }
-
-  .content {
-    max-width: 620px;
-    flex: 1 1 420px;
-  }
-
-  .graphic {
-    flex: 0 0 360px;
-    max-width: 360px;
-    display: block;
-  }
-
-  .graphic svg {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  @media (max-width: 900px) {
-    .graphic { display: none; }
-  }
-
-  @keyframes reveal {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .reveal {
-    opacity: 0;
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .mark {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 900;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin: 0 0 3rem 0;
-    animation-delay: 0s;
-  }
-
-  h1 {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 900;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    line-height: 1.1;
-    margin: 0 0 1.25rem 0;
-    max-width: 14ch;
-    animation-delay: 0.12s;
-  }
-
-  .rule {
-    width: 64px;
-    height: 4px;
-    background: var(--accent);
-    border: none;
-    margin: 0 0 1.75rem 0;
-    animation-delay: 0.28s;
-    transform-origin: left;
-  }
-
-  .rule.reveal {
-    animation-name: revealRule;
-  }
-
-  @keyframes revealRule {
-    from {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    to {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-  }
-
-  p {
-    font-size: 1.0625rem;
-    line-height: 1.65;
-    color: var(--muted);
-    margin: 0 0 0.75rem 0;
-    max-width: 58ch;
-  }
-
-  p.reveal {
-    animation-delay: 0.4s;
-  }
-
-  .status {
-    margin-top: 2.5rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid rgba(139, 152, 163, 0.25);
-    font-size: 0.9375rem;
-    animation-delay: 0.52s;
-  }
-
-  .frame-line {
-    fill: none;
-    stroke: var(--muted);
-    stroke-width: 1.5;
-    opacity: 0.55;
-    stroke-dasharray: 900;
-    stroke-dashoffset: 900;
-    animation: draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  }
-
-  .frame-brace {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 2;
-    stroke-dasharray: 900;
-    stroke-dashoffset: 900;
-    animation: draw 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  }
-
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
-  }
-
-  .joint {
-    fill: var(--accent);
-    opacity: 0;
-    animation: joint 0.4s ease-out forwards, pulse 2.6s ease-in-out infinite;
-  }
-
-  @keyframes joint {
-    to { opacity: 1; }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 0.9; r: 3.5; }
-    50% { opacity: 0.4; r: 5; }
-  }
-
-  .status a {
-    color: var(--text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-  }
-
-  .status a:hover {
-    color: var(--accent);
-  }
-
-  @media (max-width: 480px) {
-    main { padding: 6vh 6vw; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main>
-  <div class="content">
-    <p class="mark reveal">PIVOTEX</p>
-    <h1 class="reveal">Engineering the infrastructure federal missions depend on.</h1>
-    <hr class="rule reveal">
-    <p class="reveal">Pivotex is an architecture, engineering, and construction firm delivering design and program management for government and defense infrastructure across Africa.</p>
-    <div class="status reveal">
-      <p style="margin:0;">Site under construction. Reach us at <a id="contact-link">loading…</a></p>
-    </div>
+
+<header class="hero">
+  <div class="hero__inner">
+    <div class="wordmark">PIVOTEX</div>
+
+    <h1 class="hero__headline">Engineering the infrastructure federal missions depend on.</h1>
+
+    <p class="hero__sub">Based in Kenya. Delivering across Africa.</p>
   </div>
-  <div class="graphic">
-    <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
-      <path class="frame-line" d="M60,380 L340,380" style="animation-delay:0.6s"/>
-      <path class="frame-line" d="M60,60 L340,60" style="animation-delay:0.7s"/>
-      <path class="frame-line" d="M80,380 L80,60" style="animation-delay:0.8s"/>
-      <path class="frame-line" d="M200,380 L200,60" style="animation-delay:0.9s"/>
-      <path class="frame-line" d="M320,380 L320,60" style="animation-delay:1.0s"/>
-      <path class="frame-line" d="M80,300 L320,300" style="animation-delay:1.1s"/>
-      <path class="frame-line" d="M80,220 L320,220" style="animation-delay:1.2s"/>
-      <path class="frame-line" d="M80,140 L320,140" style="animation-delay:1.3s"/>
-      <path class="frame-brace" d="M80,380 L200,300 L320,220 L200,140 L80,60" style="animation-delay:1.5s"/>
-      <circle class="joint" cx="80" cy="380" r="3.5" style="animation-delay:2.6s"/>
-      <circle class="joint" cx="200" cy="300" r="3.5" style="animation-delay:2.7s"/>
-      <circle class="joint" cx="320" cy="220" r="3.5" style="animation-delay:2.8s"/>
-      <circle class="joint" cx="200" cy="140" r="3.5" style="animation-delay:2.9s"/>
-      <circle class="joint" cx="80" cy="60" r="3.5" style="animation-delay:3.0s"/>
+
+  <div class="hero__drawing" aria-hidden="true">
+    <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" class="blueprint">
+      <path pathLength="1" class="bp-line" style="animation-delay:0s" d="M60,380 L340,380" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.1s" d="M60,60 L340,60" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.2s" d="M80,380 L80,60" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.3s" d="M200,380 L200,60" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.4s" d="M320,380 L320,60" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.5s" d="M80,300 L320,300" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.6s" d="M80,220 L320,220" />
+      <path pathLength="1" class="bp-line" style="animation-delay:0.7s" d="M80,140 L320,140" />
+      <path pathLength="1" class="bp-brace" style="animation-delay:0.9s" d="M80,380 L200,300 L320,220 L200,140 L80,60" />
+      <circle class="joint" cx="80" cy="380" r="3.5" style="animation-delay:1.9s" />
+      <circle class="joint" cx="200" cy="300" r="3.5" style="animation-delay:2.0s" />
+      <circle class="joint" cx="320" cy="220" r="3.5" style="animation-delay:2.1s" />
+      <circle class="joint" cx="200" cy="140" r="3.5" style="animation-delay:2.2s" />
+      <circle class="joint" cx="80" cy="60" r="3.5" style="animation-delay:2.3s" />
     </svg>
   </div>
+</header>
+
+<main>
+
+  <section class="about" id="about">
+    <div class="about__inner">
+      <div class="about__label">
+        <h2>Who we are</h2>
+      </div>
+      <div class="about__copy">
+        <p>Pivotex Investments Limited is an architecture, engineering, and construction firm based in Kenya, delivering design and program management for government and defense infrastructure across Africa.</p>
+        <p>We bring engineering and program oversight together, giving clients a single point of accountability from design through delivery. Our focus is federal and defense-adjacent infrastructure, working within the standards and controls that projects of this kind demand.</p>
+        <p>We work where technical rigor meets mission requirements: engineering built to specification, delivery built to schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <div class="about__label">
+        <h2>Get in touch</h2>
+      </div>
+
+      <p class="contact__lead">Site under construction. Reach us at <a href="#" id="js-mail-link">hello [at] pivotex.africa</a>.</p>
+    </div>
+  </section>
+
 </main>
-  <script>
-  (function () {
-    var user = 'hello';
-    var domain = 'pivotex.africa';
-    var address = user + '@' + domain;
-    var link = document.getElementById('contact-link');
-    link.href = 'mailto:' + address;
-    link.textContent = address;
-  })();
-</script>
+
+<footer class="site-footer">
+  <span>&copy; <span id="year"></span> Pivotex Investments Limited</span>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
