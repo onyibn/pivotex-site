@@ -206,7 +206,7 @@
     <hr class="rule reveal">
     <p class="reveal">Pivotex is an architecture, engineering, and construction firm delivering design and program management for government and defense infrastructure across Africa.</p>
     <div class="status reveal">
-      <p style="margin:0;">Site under construction. Reach us at <a href="mailto:hello@pivotex.africa">hello@pivotex.africa</a></p>
+      <p style="margin:0;">Site under construction. Reach us at <a id="contact-link">loading…</a></p>
     </div>
   </div>
   <div class="graphic">
@@ -228,5 +228,15 @@
     </svg>
   </div>
 </main>
+  <script>
+  (function () {
+    var user = 'hello';
+    var domain = 'pivotex.africa';
+    var address = user + '@' + domain;
+    var link = document.getElementById('contact-link');
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+  })();
+</script>
 </body>
 </html>
